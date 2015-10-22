@@ -1,0 +1,143 @@
+#container header,
+#sidebar,
+#footer,
+.read-more,
+.edit-post,
+#post-series,
+.list-pub br,
+.list-cat br,
+.list-tags br,
+#respond,
+.reply,
+.comment-edit-link
+	{
+	display: none;
+	}
+
+a {
+	color: #000;
+	text-decoration: none;
+	border-bottom: dotted 1px #999;
+	}
+
+/* Posts & Pages */
+body #container {
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border: none;
+}
+#container #content,
+#content .post,
+#content .entry {
+	border: none;
+	background: #fff;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	}
+
+.post h2 a {
+	text-decoration: none;
+	}
+
+.post .post-content {
+	padding: 0;
+	margin: 12pt 0;
+	}
+
+.post-content address,
+.post-content blockquote,
+.post-content cite,
+.post-content dd,
+.post-content dl,
+.post-content dt,
+.post-content em,
+.post-content ins,
+.post-content li,
+.post-content ol,
+.post-content p,
+.post-content q,
+.post-content span,
+.post-content strong,
+.post-content table,
+.post-content ul,
+.post-content var {
+	font-family: serif;
+	}
+
+.post .list-pub,
+.post .list-cat,
+.post .list-tags {
+	float: none;
+	border: solid 1pt #ccc;
+	box-shadow: none;
+	margin: 4pt auto;
+	width: 80%;
+	}
+
+.printcopyright #cc-button {
+	}
+
+/* Comments */
+.post div#comments,
+.post div.comment,
+.post div.pingback {
+	border: none;
+	box-shadow: none;
+	}
+.post .comment-list {
+	padding-left: 0;
+	}
+.post div.comment {
+	font-size: 10pt;
+	margin-bottom: 6pt;
+	border: solid 1pt #ccc;
+	padding: 6pt 6pt 0 6pt;
+	}
+.post .depth-2,
+.post .depth-3,
+.post .depth-4,
+.post .depth-5,
+.post .depth-6,
+.post .depth-7,
+.post .depth-8,
+.post .depth-9,
+.post .depth-10 {
+	margin-left: 10pt;
+	}
+
+/* Miscellaneous */
+.printonly {
+	display: block !important;
+	}
+
+.printcopyright {
+	font-size: 10pt;
+	border: solid 1pt #ccc;
+	padding: 10pt;
+	font-weight: bold;
+	margin-bottom: 2pt;
+	}
+
+.printurl {
+	font-size: 10pt;
+	border: solid 1pt #ccc;
+	padding: 10pt;
+	font-weight: bold;
+	}
+.printurl-url {
+	font-family: "ubuntu mono", "opensans mono", monospace;
+	font-weight: normal;
+	}
+
+h1.post-title {
+	border-bottom: solid 1pt #000;
+	}
+
+blockquote {
+	border: solid 1px #999;
+	padding: 0 8pt 0 16pt;
+	}
