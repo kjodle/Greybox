@@ -104,7 +104,7 @@ function greybox_setup(){
 	// https://codex.wordpress.org/Function_Reference/add_editor_style
 	// GreyBox itself does not use custom editor styles, but it is
 	// possible to do so in a child theme
-	add_editor_style( 'editor-style.css' );
+//	add_editor_style( 'editor-style.css' );
 
 }
 endif; // greybox_setup
@@ -118,30 +118,27 @@ function greybox_styles() {
 	// Main stylesheet
 	wp_enqueue_style( 'greyboxscreenstyle', get_template_directory_uri() . '/style.css', array(), '0.3', 'screen' );
 
+	// Mobile stylesheet
+	wp_enqueue_style( 'greyboxmobilecss', get_template_directory_uri() . '/styles/mobile.css', array(), '0.3', 'screen and (max-width: 1100px)' );
+
 	// Print stylesheet
-	wp_enqueue_style( 'greyboxprintstyle', get_template_directory_uri() . '/print.css', array(), '0.3', 'print' );
+	wp_enqueue_style( 'greyboxprintstyle', get_template_directory_uri() . '/styles/print.css', array(), '0.3', 'print' );
 
 	// Menu stylesheet
-	wp_enqueue_style( 'greyboxsuperfishcss', get_template_directory_uri() . '/superfish.css', array(), '0.3', 'screen' );
+	wp_enqueue_style( 'greyboxsuperfishcss', get_template_directory_uri() . '/styles/superfish.css', array(), '0.3', 'screen' );
 
 	// JavaScript for menu dropdowns
 	// http://users.tpg.com.au/j_birch/plugins/superfish/
 	wp_enqueue_script( 'greyboxsuperfishjs', get_template_directory_uri() . '/js/superfish.js');
 
 	// Add Genericons on front end to style post formats
-	wp_enqueue_style ( 'greybox-genericons', get_stylesheet_uri(), array ( 'dashicons' ), '1.0' );
+//	wp_enqueue_style ( 'greyboxgenericons', get_stylesheet_uri(), array ( 'dashicons' ), '1.0' );
+
+	// Add Roboto webfont
+	wp_enqueue_style( 'googlewebfonts', 'http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' );
 
 }
 add_action( 'wp_enqueue_scripts', 'greybox_styles' );
-
-
-
-// Enqueue the 'Roboto' Google webfonts
-// To override this in a child theme, dequeue this style first
-function greybox_google_webfonts() {
-	wp_enqueue_style( 'google-webfonts', 'http://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' );
-}
-add_action( 'wp_enqueue_scripts', 'greybox_google_webfonts' );
 
 
 
@@ -162,8 +159,18 @@ function baw_hack_wp_title_for_home( $title )
 // codex.wordpress.org/Function_Reference/register_sidebar
 function greybox_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'greybox' ),
-		'id' => 'sidebar',
+		'name' => __( 'Sidebar1', 'greybox' ),
+		'id' => 'sidebar1',
+		'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'greybox' ),
+		'before_widget' => '<div class="sidebar-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widgettitle">',
+		'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar( array(
+		'name' => __( 'Sidebar2', 'greybox' ),
+		'id' => 'sidebar2',
 		'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'greybox' ),
 		'before_widget' => '<div class="sidebar-widget">',
 		'after_widget'  => '</div>',

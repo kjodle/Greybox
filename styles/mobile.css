@@ -1,0 +1,29 @@
+* {
+	box-model: border-box;
+}
+
+body {
+	background-image: none;
+	padding: 0;
+	margin: 0;
+}
+
+#container,
+#container > header,
+#content,
+#sidebar,
+#sidebar1,
+#sidebar2,
+#footer {
+	max-width: 100%;
+	margin: 0;
+	float: none;
+	border: none;
+	box-shadow: none;
+	padding: 0.5em;
+}
+
+#container {
+	background: #fff;
+	border: solid 1px red;
+}
